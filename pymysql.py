@@ -107,3 +107,16 @@ def orderbydesc():
     result = cursor.fetchall()
     for x in result:
         print(x)
+
+#Delete
+
+def deleterecord():
+    cursor = mydb.cursor()
+    cursor.execute("DELETE FROM TestDB1.Customer WHERE Address='Main Road 989';")
+    mydb.commit()
+
+    print(cursor.rowcount, "record(s) deleted")
+
+if __name__ == "__main__":
+    pass
+    # deleterecord()
