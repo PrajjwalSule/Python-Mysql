@@ -117,6 +117,41 @@ def deleterecord():
 
     print(cursor.rowcount, "record(s) deleted")
 
+
+def droptable():
+    cursor = mydb.cursor()
+    query = "DROP TABLE TestDB1.TestTable1"
+    cursor.execute(query)
+    mydb.commit()
+
+def truncatetable():
+    cursor = mydb.cursor()
+    query = "TRUNCATE TABLE TestDB1.Student"
+    cursor.execute(query)
+    mydb.commit()
+
+def updatetable():
+    cursor = mydb.cursor()
+    query = "UPDATE TestDB1.Customer SET Address = 'Janpaw Kuti 105' WHERE Address = 'Sideway 1633'"
+    cursor.execute(query)
+    mydb.commit()
+
+def altertable():
+    cursor = mydb.cursor()
+    query = "ALTER TABLE Customer ADD COLUMN Email VARCHAR(30)"
+    cursor.execute(query)
+    mydb.commit()
+
 if __name__ == "__main__":
     pass
     # deleterecord()
+    # droptable()
+    # truncatetable()
+    # c = mydb.cursor()
+    # c.execute("USE TestDB1")
+    # c.execute("SHOW TABLES")
+    # for table in c:
+    #     print(table)
+    # updatetable()
+    altertable()
+    selectcolumns()
