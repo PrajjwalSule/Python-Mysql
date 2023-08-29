@@ -28,6 +28,9 @@
 > Get to known about present tables in a particular database
 >> "SHOW TABLES"
 
+> See Table structure
+>> "DESC {database_name}.{table_name}"
+
 > Insert data into table
 >> "INSERT INTO {table_name} ({col_names} VALUES {values_respective_to_columns})"
 >> db.commit()
@@ -43,5 +46,44 @@
 
 > Select specific columns from table.
 >> "SELECT {col_names} FROM {database_name}.{table_name} "
+
+
+> When selecting records from a table, you can filter the selection by using the "WHERE" statement:
+>> "SELECT * FROM {database_name}.{table_name} WHERE {col_name} {contion}"
+
+> Wild card characters for select the records that starts, includes, or ends with a given letter or phrase.
+>> Wild card character represented by %
+>> "SELECT * FROM {table_name} WHERE {col_name} LIKE '%way%'" 
+
+> ORDER BY statement to sort the result in ascending or descending order.
+>> "SELECT * FROM {table_name} ORDER BY {col_name}"
+
+> ORDER BY in descending order
+>> "SELECT * FROM {table_name} ORDER BY {col_name} DESC"
+
+> Delete records from table
+>> "DELETE * FROM {database_name}.{table_name} WHERE {col_name} {contion}"
+
+> DROP TABLE : This will drop entire table data and its structure as well.
+>> "DROP TABLE {database_name}.{table_name}"
+
+> TRUNCATE TABLE: This will drop the data inside table but maintained the table structure.
+>> "TRUNCATE TABLE {database_name}.{table_name}"
+
+> ALTER TABLE: It is used to update the structure of table like col_names and constraints.
+>> "ALTER TABLE {table_name} ADD {update_col}"
+>> "ALTER TABLE {table_name} DROP COLUMN {drop_col}"
+>> "ALTER TABLE {table_name} MODIFY COLUMN {modify_col}"
+
+> UPDATE TABLE: This is used to update existing records of the table.
+>> "UPDATE {table_name} SET {col_name_want_to_update} = {new_data} WHERE {col_name_with_existing_data} = {existing_data}"
+
+
+
+
+
+
+
+
 
 
