@@ -138,9 +138,18 @@ def updatetable():
 
 def altertable():
     cursor = mydb.cursor()
-    query = "ALTER TABLE Customer ADD COLUMN Email VARCHAR(30)"
+    query = "ALTER TABLE TestDB1.Customer ADD COLUMN Email VARCHAR(30)"
     cursor.execute(query)
     mydb.commit()
+
+def limitdata():
+    cursor = mydb.cursor()
+    query = "SELECT * FROM TestDB1.Customer LIMIT 5"
+    cursor.execute(query)
+    result = cursor.fetchall()
+    for x in result:
+        print(x)
+
 
 if __name__ == "__main__":
     pass
@@ -153,5 +162,6 @@ if __name__ == "__main__":
     # for table in c:
     #     print(table)
     # updatetable()
-    altertable()
-    selectcolumns()
+    # altertable()
+    limitdata()
+    # selectcolumns()

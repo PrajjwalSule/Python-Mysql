@@ -78,7 +78,8 @@
 > UPDATE TABLE: This is used to update existing records of the table.
 >> "UPDATE {table_name} SET {col_name_want_to_update} = {new_data} WHERE {col_name_with_existing_data} = {existing_data}"
 
-
+> Limit the data : This is used to set a limit on records to be display.
+>> "SELECT * FROM {table_name} LIMIT 5"
 
 
 
