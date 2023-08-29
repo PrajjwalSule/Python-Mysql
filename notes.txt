@@ -1,0 +1,47 @@
+> Python needs a MySQL driver to access the MySQL database, known as MySQL Connector.
+
+> Example of creating database in MySQL through Python
+>>  import mysql.connector
+
+    mydb = mysql.connector.connect(
+    host="localhost",
+    user="yourusername",
+    password="yourpassword"
+    )
+
+    mycursor = mydb.cursor()
+
+    mycursor.execute("CREATE DATABASE mydatabase")
+
+> Get to known about present databases in MySQL DATABASE
+>> "SHOW DATABASES"
+
+> Create Table
+>> "CREATE TABLE {table_name} (
+    {col_name} {datatype} {constraint},
+    {} {} {},
+    {} {} {},
+    {} {} {}
+
+    )"
+
+> Get to known about present tables in a particular database
+>> "SHOW TABLES"
+
+> Insert data into table
+>> "INSERT INTO {table_name} ({col_names} VALUES {values_respective_to_columns})"
+>> db.commit()
+
+> Insert multiple data
+>> query = "INSERT INTO {table_name} ({col_names}) VALUES ({%s placeholders})" 
+>> val = [({values_respective_to_columns in a tuple}), (), ()]
+>> cursor.executemany(query, val)
+>> db.commit()
+
+> Select to display the data from table
+>> "SELECT * FROM {database_name}.{table_name}"
+
+> Select specific columns from table.
+>> "SELECT {col_names} FROM {database_name}.{table_name} "
+
+
